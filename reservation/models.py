@@ -15,4 +15,4 @@ class Menu(models.Model):
     inventory = models.BooleanField()
 
     def __str__(self):
-        return 'name: ' + self.title + ', price: ' + str(self.price) + ', stock: ' + str(self.inventory)
+        return f'{self.title} : {self.price}'  

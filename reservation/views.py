@@ -25,7 +25,7 @@ class BookingView(APIView):
         return Response(serializer.data)
 
 class MenuView(APIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated] # ? Allow all to see all menu
 
     def get(self, request):
         items = Menu.objects.all() 

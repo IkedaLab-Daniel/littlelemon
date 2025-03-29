@@ -2,9 +2,12 @@ from django.urls import path
 from . import views
 from rest_framework.authtoken.views import obtain_auth_token
 urlpatterns = [
+    # * Viewsets, render()
     path('', views.home),
-    path('menu/', views.MenuView.as_view()),
+    path('menu/', views.MenuView.as_view(), name="menu-list"),
     path('booking/', views.BookingView.as_view()),
+
+    # * APIs, DRF Generics
     path('api/menu/', views.MenuItemView.as_view()),
     path('api/menu/<int:pk>', views.SingleMenuItemView.as_view()),
     path('api/booking/', views.BookingItemView.as_view()),
